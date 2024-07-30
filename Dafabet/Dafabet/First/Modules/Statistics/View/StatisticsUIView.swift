@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct StatisticsUIView: View {
+    @ObservedObject var viewModel: ProfileViewModel
+    @State private var showEditProfileView = false
+
     var body: some View {
         NavigationView {
             
@@ -24,14 +27,16 @@ struct StatisticsUIView: View {
                     
                     ScrollView {
                         VStack(spacing: 12) {
-                            StatisticsOne()
-                            StatisticsTwo()
-                            StatisticsThree()
+                            if !showEditProfileView {
+                                StatisticsOne(selectedImage: viewModel.profile.image, recorded: viewModel.profile.recorded, avgSpeed: viewModel.profile.avgSpeed, maxSpeed: viewModel.profile.maxSpeed)
+                                StatisticsTwo(name: viewModel.profile.name, level: viewModel.profile.level)
+                                StatisticsThree(distance: viewModel.profile.distance, time: viewModel.profile.time, peakAlt: viewModel.profile.peakAlt, longestRun: viewModel.profile.longestRun)
+                            }
                         }
                     }.padding(.horizontal).padding(.bottom, 40)
                 }.navigationBarItems(trailing:
                                         Button {
-                    // showAddTrackSheet = true
+                     showEditProfileView = true
                 } label: {
                     Image(systemName: "square.and.pencil")
                         .foregroundColor(.onboardingBtn)
@@ -39,18 +44,27 @@ struct StatisticsUIView: View {
                     
                 }
                 )
+            }.sheet(isPresented: $showEditProfileView) {
+                EditStatsUIView(viewModel: viewModel, showEditProfileView: $showEditProfileView)
             }
+            .onAppear {
+                showEditProfileView = false
+            }
+            
         }
     }
 }
 
 #Preview {
-    StatisticsUIView()
+    StatisticsUIView(viewModel: ProfileViewModel())
 }
 
 
 struct StatisticsOne: View {
-    @State private var selectedImage: UIImage?
+    @State var selectedImage: UIImage?
+    @State var recorded: String
+    @State var avgSpeed: String
+    @State var maxSpeed: String
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
@@ -62,8 +76,9 @@ struct StatisticsOne: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 225, height: 183)
-                        .clipShape(Circle())
-                        .cornerRadius(6)
+                        .clipShape(Rectangle())
+                        .cornerRadius(8)
+                        .padding()
                 } else {
                     ZStack {
                         Rectangle()
@@ -83,7 +98,7 @@ struct StatisticsOne: View {
                 }
                 VStack(spacing: 26) {
                     VStack(alignment: .leading) {
-                        Text("0 RUNS")
+                        Text("\(recorded) RUNS")
                         .font(.system(size: 13)
                         .weight(.semibold))
                         .foregroundColor(.black)
@@ -98,7 +113,7 @@ struct StatisticsOne: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        Text("0.0 km/h")
+                        Text("\(avgSpeed) km/h")
                         .font(.system(size: 13)
                         .weight(.semibold))
                         .foregroundColor(.black)
@@ -113,7 +128,7 @@ struct StatisticsOne: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        Text("0.0 km/h")
+                        Text("\(maxSpeed) km/h")
                         .font(.system(size: 13)
                         .weight(.semibold))
                         .foregroundColor(.black)
@@ -134,17 +149,18 @@ struct StatisticsOne: View {
 }
 
 struct StatisticsTwo: View {
-    @State private var selectedImage: UIImage?
+    @State var name: String
+    @State var level: String
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
             
             HStack {
                 
-                Text("Username")
+                Text(name)
                     .font(.system(size: 22, weight: .bold))
                 Spacer()
-                Text("Profi")
+                Text(level)
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.white)
                     .padding(.horizontal, 8)
@@ -163,7 +179,10 @@ struct StatisticsTwo: View {
 }
 
 struct StatisticsThree: View {
-    @State private var selectedImage: UIImage?
+    @State var distance: String
+    @State var time: String
+    @State var peakAlt: String
+    @State var longestRun: String
     var body: some View {
         
         VStack(spacing: 12) {
@@ -180,7 +199,7 @@ struct StatisticsThree: View {
                         }.padding(.bottom, 17)
                         
                         HStack {
-                            Text("0.0 Km")
+                            Text("\(distance) Km")
                                 .font(.system(size: 22, weight: .bold))
                             Spacer()
                         }.padding(.bottom, 8)
@@ -209,7 +228,7 @@ struct StatisticsThree: View {
                         }.padding(.bottom, 17)
                         
                         HStack {
-                            Text("00:00:00")
+                            Text(time)
                                 .font(.system(size: 22, weight: .bold))
                             Spacer()
                         }.padding(.bottom, 8)
@@ -240,7 +259,7 @@ struct StatisticsThree: View {
                         }.padding(.bottom, 17)
                         
                         HStack {
-                            Text("0.0 FH")
+                            Text("\(peakAlt) FH")
                                 .font(.system(size: 22, weight: .bold))
                             Spacer()
                         }.padding(.bottom, 8)
@@ -269,7 +288,7 @@ struct StatisticsThree: View {
                         }.padding(.bottom, 17)
                         
                         HStack {
-                            Text("0.0 MI")
+                            Text("\(longestRun) MI")
                                 .font(.system(size: 22, weight: .bold))
                             Spacer()
                         }.padding(.bottom, 8)

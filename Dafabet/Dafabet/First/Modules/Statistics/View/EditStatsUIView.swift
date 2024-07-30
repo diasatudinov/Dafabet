@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditStatsUIView: View {
+    @ObservedObject var viewModel: ProfileViewModel
     @State private var selectedImage: UIImage?
     @State private var isShowingImagePicker = false
     @State private var name = "Username"
@@ -15,17 +16,20 @@ struct EditStatsUIView: View {
     @State private var avgSpeed = "0"
     @State private var maxSpeed = "0"
     @State private var distance = "0"
-    @State private var time = "0"
+    @State private var time = "00:00:00"
     @State private var peakAlt = "0"
     @State private var longestRun = "0"
     @State private var selectedSegment = 0
     let segments = ["Newbie", "Medium", "Profi"]
-    
+    @Binding var showEditProfileView: Bool
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
             VStack {
                 Text("Edit statistics")
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundColor(.black)
+                    .padding()
                 ScrollView {
                     ZStack {
                         
@@ -207,6 +211,9 @@ struct EditStatsUIView: View {
                                 .font(.system(size: 17, weight: .semibold))
                                 .multilineTextAlignment(.trailing)
                                 .keyboardType(.decimalPad)
+                                .onChange(of: time) { newValue in
+                                    time = formatTimeInput(newValue)
+                                }
                             
                         }.padding()
                     }.frame(height: 50)
@@ -251,12 +258,53 @@ struct EditStatsUIView: View {
                         }.padding()
                     }.frame(height: 50)
                         .cornerRadius(12)
-                    Spacer()
-                }
-            }.padding(.horizontal)
+                    
+                    Button {
+                        if let image = selectedImage {
+                            let profile = Profile(imageData: image.jpegData(compressionQuality: 1.0), name: name, level: segments[selectedSegment], recorded: recorded, avgSpeed: avgSpeed, maxSpeed: maxSpeed, distance: distance, time: time, peakAlt: peakAlt, longestRun: longestRun)
+                            
+                            viewModel.saveProfile(profile)
+                        } else {
+                            let profile = Profile(name: name, level: segments[selectedSegment], recorded: recorded, avgSpeed: avgSpeed, maxSpeed: maxSpeed, distance: distance, time: time, peakAlt: peakAlt, longestRun: longestRun)
+                            viewModel.saveProfile(profile)
+                        }
+                        showEditProfileView = false
+                    } label: {
+                        
+                        ZStack(alignment: .center) {
+                            Rectangle()
+                                .frame(height: 54)
+                                .foregroundColor(Color.onboardingBtn)
+                                .font(.system(size: 17, weight: .bold))
+                                .cornerRadius(16)
+                                .padding(.horizontal)
+                            HStack(spacing: 4) {
+                                Image(systemName: "checkmark")
+                                Text("Save")
+                                
+                            }.font(.system(size: 17, weight: .semibold))
+                                .foregroundColor(.white)
+                        }
+                    }.background(Color.onboardingBtn)
+                        .cornerRadius(18)
+                        //.padding(.horizontal, 24)
+                        .padding(.top)
+                        .padding(.bottom)
+                }.padding(.horizontal)
+            }
             .sheet(isPresented: $isShowingImagePicker, onDismiss: loadImage) {
                 ImagePicker(selectedImage: $selectedImage, isPresented: $isShowingImagePicker)
             }
+        }.onAppear {
+            selectedImage = viewModel.profile.image
+            name = viewModel.profile.name
+            recorded = viewModel.profile.recorded
+            avgSpeed = viewModel.profile.avgSpeed
+            maxSpeed = viewModel.profile.maxSpeed
+            distance = viewModel.profile.distance
+            time = viewModel.profile.time
+            peakAlt = viewModel.profile.peakAlt
+            longestRun = viewModel.profile.longestRun
         }
     }
     
@@ -265,8 +313,22 @@ struct EditStatsUIView: View {
             print("Selected image size: \(selectedImage.size)")
         }
     }
+    
+    func formatTimeInput(_ input: String) -> String {
+            let digitsOnly = input.filter { "0123456789".contains($0) }
+            var formattedString = ""
+
+            for (index, character) in digitsOnly.prefix(6).enumerated() {
+                if index == 2 || index == 4 {
+                    formattedString.append(":")
+                }
+                formattedString.append(character)
+            }
+
+            return formattedString
+        }
 }
 
 #Preview {
-    EditStatsUIView()
+    EditStatsUIView(viewModel: ProfileViewModel(), showEditProfileView: .constant(true))
 }

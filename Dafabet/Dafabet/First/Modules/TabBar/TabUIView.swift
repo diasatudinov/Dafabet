@@ -10,18 +10,15 @@ import SwiftUI
 struct TabUIView: View {
     @State var selectedTab = 0
     private let tabs = ["Home", "Profile", "Settings"]
-//    @State private var profile: ProfileModel?
-//    @ObservedObject var profileVM = ProfileViewModel()
-//    @ObservedObject var trackVM = TrackViewModel()
-//    @ObservedObject var resortVM = ResortViewModel()
     
+    @ObservedObject var profileVM = ProfileViewModel()
     
     var body: some View {
         ZStack {
             
             switch selectedTab {
             case 0:
-                StatisticsUIView()
+                StatisticsUIView(viewModel: profileVM)
             case 1:
                 Text("Tab 2")
             case 2:
