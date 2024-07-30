@@ -24,6 +24,8 @@
 		2B55F5852C58C4BA0060D9B0 /* StatisticsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5842C58C4BA0060D9B0 /* StatisticsUIView.swift */; };
 		2B55F5872C58D54E0060D9B0 /* EditStatsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5862C58D54E0060D9B0 /* EditStatsUIView.swift */; };
 		2B55F58A2C58D6540060D9B0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5892C58D6540060D9B0 /* ImagePicker.swift */; };
+		2B55F58C2C5908CA0060D9B0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F58B2C5908CA0060D9B0 /* Profile.swift */; };
+		2B55F58E2C5909820060D9B0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F58D2C5909820060D9B0 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		2B55F5842C58C4BA0060D9B0 /* StatisticsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsUIView.swift; sourceTree = "<group>"; };
 		2B55F5862C58D54E0060D9B0 /* EditStatsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatsUIView.swift; sourceTree = "<group>"; };
 		2B55F5892C58D6540060D9B0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2B55F58B2C5908CA0060D9B0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2B55F58D2C5909820060D9B0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		2B55F5812C58C4960060D9B0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2B55F58D2C5909820060D9B0 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 		2B55F5832C58C4A40060D9B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2B55F58B2C5908CA0060D9B0 /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B55F5852C58C4BA0060D9B0 /* StatisticsUIView.swift in Sources */,
+				2B55F58C2C5908CA0060D9B0 /* Profile.swift in Sources */,
 				2B55F5552C579CBF0060D9B0 /* ContentView.swift in Sources */,
 				2B55F5872C58D54E0060D9B0 /* EditStatsUIView.swift in Sources */,
 				2B55F5532C579CBF0060D9B0 /* DafabetApp.swift in Sources */,
@@ -318,6 +325,7 @@
 				2B55F56A2C579F040060D9B0 /* ReOnboardingUIView.swift in Sources */,
 				2B55F58A2C58D6540060D9B0 /* ImagePicker.swift in Sources */,
 				2B55F5622C579E800060D9B0 /* LoaderUIView.swift in Sources */,
+				2B55F58E2C5909820060D9B0 /* ProfileViewModel.swift in Sources */,
 				2B55F57B2C57BD010060D9B0 /* SettingsUIView.swift in Sources */,
 				2B55F57F2C57BD2E0060D9B0 /* SettingsViewModel.swift in Sources */,
 			);

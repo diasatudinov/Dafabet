@@ -11,8 +11,8 @@ import SwiftUI
 struct DafabetApp: App {
     var body: some Scene {
         WindowGroup {
-            //LoaderUIView()
-            EditStatsUIView()
+            LoaderUIView()
+            //EditStatsUIView()
         }
     }
 }
