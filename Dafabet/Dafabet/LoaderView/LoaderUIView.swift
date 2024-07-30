@@ -52,8 +52,8 @@ struct LoaderUIView: View {
                         
                         Text("\(Int(progress))%")
                     }
-                    .font(.system(size: 17))
-                    .fontWeight(.semibold)
+                    .font(.system(size: 17, weight: .semibold))
+                  
                     .foregroundColor(.black)
                     .padding(14)
                     .padding(.bottom, 60)

@@ -21,6 +21,9 @@
 		2B55F5782C57B7DB0060D9B0 /* TabUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5772C57B7DB0060D9B0 /* TabUIView.swift */; };
 		2B55F57B2C57BD010060D9B0 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F57A2C57BD010060D9B0 /* SettingsUIView.swift */; };
 		2B55F57F2C57BD2E0060D9B0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F57E2C57BD2E0060D9B0 /* SettingsViewModel.swift */; };
+		2B55F5852C58C4BA0060D9B0 /* StatisticsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5842C58C4BA0060D9B0 /* StatisticsUIView.swift */; };
+		2B55F5872C58D54E0060D9B0 /* EditStatsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5862C58D54E0060D9B0 /* EditStatsUIView.swift */; };
+		2B55F58A2C58D6540060D9B0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5892C58D6540060D9B0 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		2B55F5772C57B7DB0060D9B0 /* TabUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUIView.swift; sourceTree = "<group>"; };
 		2B55F57A2C57BD010060D9B0 /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
 		2B55F57E2C57BD2E0060D9B0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		2B55F5842C58C4BA0060D9B0 /* StatisticsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsUIView.swift; sourceTree = "<group>"; };
+		2B55F5862C58D54E0060D9B0 /* EditStatsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatsUIView.swift; sourceTree = "<group>"; };
+		2B55F5892C58D6540060D9B0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		2B55F5632C579E920060D9B0 /* First */ = {
 			isa = PBXGroup;
 			children = (
+				2B55F5882C58D6430060D9B0 /* Extensions */,
 				2B55F5652C579EAD0060D9B0 /* Modules */,
 			);
 			path = First;
@@ -117,6 +124,7 @@
 		2B55F5652C579EAD0060D9B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2B55F5802C58C48C0060D9B0 /* Statistics */,
 				2B55F5792C57BCE90060D9B0 /* Settings */,
 				2B55F5762C57B7B40060D9B0 /* TabBar */,
 				2B55F5672C579EBD0060D9B0 /* Onboarding */,
@@ -179,6 +187,47 @@
 				2B55F57E2C57BD2E0060D9B0 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2B55F5802C58C48C0060D9B0 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5832C58C4A40060D9B0 /* Model */,
+				2B55F5822C58C4A00060D9B0 /* View */,
+				2B55F5812C58C4960060D9B0 /* ViewModel */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		2B55F5812C58C4960060D9B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2B55F5822C58C4A00060D9B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5842C58C4BA0060D9B0 /* StatisticsUIView.swift */,
+				2B55F5862C58D54E0060D9B0 /* EditStatsUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B55F5832C58C4A40060D9B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B55F5882C58D6430060D9B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5892C58D6540060D9B0 /* ImagePicker.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,11 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B55F5852C58C4BA0060D9B0 /* StatisticsUIView.swift in Sources */,
 				2B55F5552C579CBF0060D9B0 /* ContentView.swift in Sources */,
+				2B55F5872C58D54E0060D9B0 /* EditStatsUIView.swift in Sources */,
 				2B55F5532C579CBF0060D9B0 /* DafabetApp.swift in Sources */,
 				2B55F5782C57B7DB0060D9B0 /* TabUIView.swift in Sources */,
 				2B55F56C2C579F0F0060D9B0 /* UsOnboardingUIView.swift in Sources */,
 				2B55F56A2C579F040060D9B0 /* ReOnboardingUIView.swift in Sources */,
+				2B55F58A2C58D6540060D9B0 /* ImagePicker.swift in Sources */,
 				2B55F5622C579E800060D9B0 /* LoaderUIView.swift in Sources */,
 				2B55F57B2C57BD010060D9B0 /* SettingsUIView.swift in Sources */,
 				2B55F57F2C57BD2E0060D9B0 /* SettingsViewModel.swift in Sources */,
@@ -326,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -383,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

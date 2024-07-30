@@ -21,7 +21,7 @@ struct TabUIView: View {
             
             switch selectedTab {
             case 0:
-                Text("Tab 1")
+                StatisticsUIView()
             case 1:
                 Text("Tab 2")
             case 2:
@@ -56,7 +56,7 @@ struct TabUIView: View {
                         
                         Rectangle()
                             .fill(Color.black.opacity(0.1))
-                            .frame(height: 1)
+                            .frame(height: 0.7)
                             .padding(.bottom, 80)
                     }
                     
