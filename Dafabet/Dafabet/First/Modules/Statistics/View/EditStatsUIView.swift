@@ -287,7 +287,6 @@ struct EditStatsUIView: View {
                         }
                     }.background(Color.onboardingBtn)
                         .cornerRadius(18)
-                        //.padding(.horizontal, 24)
                         .padding(.top)
                         .padding(.bottom)
                 }.padding(.horizontal)

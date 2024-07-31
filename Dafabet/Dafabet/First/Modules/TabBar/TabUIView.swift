@@ -12,6 +12,7 @@ struct TabUIView: View {
     private let tabs = ["Home", "Profile", "Settings"]
     
     @ObservedObject var profileVM = ProfileViewModel()
+    @ObservedObject var tripsVM = TripsViewModel()
     
     var body: some View {
         ZStack {
@@ -20,7 +21,7 @@ struct TabUIView: View {
             case 0:
                 StatisticsUIView(viewModel: profileVM)
             case 1:
-                Text("Tab 2")
+                TripsUIView(viewModel: tripsVM)
             case 2:
                 SettingsUIView()
             default:

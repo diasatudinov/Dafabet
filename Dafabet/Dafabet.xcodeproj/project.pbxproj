@@ -26,6 +26,10 @@
 		2B55F58A2C58D6540060D9B0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5892C58D6540060D9B0 /* ImagePicker.swift */; };
 		2B55F58C2C5908CA0060D9B0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F58B2C5908CA0060D9B0 /* Profile.swift */; };
 		2B55F58E2C5909820060D9B0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F58D2C5909820060D9B0 /* ProfileViewModel.swift */; };
+		2B55F5942C5A2EFD0060D9B0 /* TripsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5932C5A2EFD0060D9B0 /* TripsUIView.swift */; };
+		2B55F5962C5A32DA0060D9B0 /* TripCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5952C5A32DA0060D9B0 /* TripCellUIView.swift */; };
+		2B55F5982C5A37450060D9B0 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5972C5A37450060D9B0 /* Trip.swift */; };
+		2B55F59A2C5A38980060D9B0 /* TripsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5992C5A38980060D9B0 /* TripsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		2B55F5892C58D6540060D9B0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2B55F58B2C5908CA0060D9B0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2B55F58D2C5909820060D9B0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		2B55F5932C5A2EFD0060D9B0 /* TripsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsUIView.swift; sourceTree = "<group>"; };
+		2B55F5952C5A32DA0060D9B0 /* TripCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCellUIView.swift; sourceTree = "<group>"; };
+		2B55F5972C5A37450060D9B0 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		2B55F5992C5A38980060D9B0 /* TripsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 		2B55F5652C579EAD0060D9B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2B55F58F2C5A2ECF0060D9B0 /* Trips */,
 				2B55F5802C58C48C0060D9B0 /* Statistics */,
 				2B55F5792C57BCE90060D9B0 /* Settings */,
 				2B55F5762C57B7B40060D9B0 /* TabBar */,
@@ -236,6 +245,41 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2B55F58F2C5A2ECF0060D9B0 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5922C5A2EE90060D9B0 /* Model */,
+				2B55F5912C5A2EE00060D9B0 /* View */,
+				2B55F5902C5A2ED80060D9B0 /* ViewModel */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		2B55F5902C5A2ED80060D9B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5992C5A38980060D9B0 /* TripsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2B55F5912C5A2EE00060D9B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5932C5A2EFD0060D9B0 /* TripsUIView.swift */,
+				2B55F5952C5A32DA0060D9B0 /* TripCellUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B55F5922C5A2EE90060D9B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5972C5A37450060D9B0 /* Trip.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -319,13 +363,17 @@
 				2B55F58C2C5908CA0060D9B0 /* Profile.swift in Sources */,
 				2B55F5552C579CBF0060D9B0 /* ContentView.swift in Sources */,
 				2B55F5872C58D54E0060D9B0 /* EditStatsUIView.swift in Sources */,
+				2B55F5982C5A37450060D9B0 /* Trip.swift in Sources */,
 				2B55F5532C579CBF0060D9B0 /* DafabetApp.swift in Sources */,
+				2B55F5942C5A2EFD0060D9B0 /* TripsUIView.swift in Sources */,
 				2B55F5782C57B7DB0060D9B0 /* TabUIView.swift in Sources */,
 				2B55F56C2C579F0F0060D9B0 /* UsOnboardingUIView.swift in Sources */,
 				2B55F56A2C579F040060D9B0 /* ReOnboardingUIView.swift in Sources */,
 				2B55F58A2C58D6540060D9B0 /* ImagePicker.swift in Sources */,
+				2B55F5962C5A32DA0060D9B0 /* TripCellUIView.swift in Sources */,
 				2B55F5622C579E800060D9B0 /* LoaderUIView.swift in Sources */,
 				2B55F58E2C5909820060D9B0 /* ProfileViewModel.swift in Sources */,
+				2B55F59A2C5A38980060D9B0 /* TripsViewModel.swift in Sources */,
 				2B55F57B2C57BD010060D9B0 /* SettingsUIView.swift in Sources */,
 				2B55F57F2C57BD2E0060D9B0 /* SettingsViewModel.swift in Sources */,
 			);
