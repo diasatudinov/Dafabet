@@ -29,11 +29,11 @@ struct TripCellUIView: View {
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Whistler Blackcomb")
+                        Text(trip.name)
                             .font(.system(size: 22, weight: .bold))
                             .foregroundColor(.white)
                             .padding(.bottom, 8)
-                        Text("03.02 - 24.02")
+                        Text("\(trip.startDate) - \(trip.endDate)")
                             .font(.system(size: 17, weight: .semibold))
                             .foregroundColor(.white)
                     }
@@ -42,7 +42,7 @@ struct TripCellUIView: View {
                 Spacer()
                 HStack {
                     Image(systemName: "map")
-                    Text("940.4 km")
+                    Text("\(trip.distance) km")
                     Spacer()
                 }.font(.system(size: 17, weight: .semibold))
                     .foregroundColor(.white)

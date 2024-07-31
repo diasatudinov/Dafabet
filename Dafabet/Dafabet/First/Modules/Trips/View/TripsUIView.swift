@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TripsUIView: View {
     @ObservedObject var viewModel: TripsViewModel
+    @State private var showAddTripSheet = false
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -35,7 +37,7 @@ struct TripsUIView: View {
                                 .padding(.bottom, 18)
                             
                             Button {
-                               
+                                showAddTripSheet = true
                             } label: {
                                 
                                 ZStack(alignment: .center) {
@@ -73,19 +75,24 @@ struct TripsUIView: View {
                         ScrollView {
                             
                             ForEach(viewModel.trips, id: \.self){ trip in
-                                TripCellUIView(trip: trip)
-                                    .padding(.horizontal)
-                                    .padding(.bottom, 10)
-//                                    .onTapGesture {
-//                                        selectedTrack = track
-//                                    }
+                                NavigationLink {
+                                    TripDetailsUIView(trip: trip, viewModel: viewModel)
+                                } label: {
+                                    
+                                    TripCellUIView(trip: trip)
+                                        .padding(.horizontal)
+                                        .padding(.bottom, 10)
+                                    //                                    .onTapGesture {
+                                    //                                        selectedTrack = track
+                                    //                                    }
+                                }
                             }
                         }.padding(.bottom, 40)
                     }
                     Spacer()
                 }.navigationBarItems(trailing:
                                         Button {
-                     //showEditProfileView = true
+                    showAddTripSheet = true
                 } label: {
                     Image(systemName: "plus.circle")
                         .foregroundColor(.onboardingBtn)
@@ -93,6 +100,9 @@ struct TripsUIView: View {
                     
                 }
                 )
+                .sheet(isPresented: $showAddTripSheet) {
+                    NewTripUIView(viewModel: viewModel, showAddTripSheet: $showAddTripSheet)
+                }
             }
         }
     }
