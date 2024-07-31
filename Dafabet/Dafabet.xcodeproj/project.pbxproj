@@ -30,6 +30,10 @@
 		2B55F5962C5A32DA0060D9B0 /* TripCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5952C5A32DA0060D9B0 /* TripCellUIView.swift */; };
 		2B55F5982C5A37450060D9B0 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5972C5A37450060D9B0 /* Trip.swift */; };
 		2B55F59A2C5A38980060D9B0 /* TripsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5992C5A38980060D9B0 /* TripsViewModel.swift */; };
+		2B55F59C2C5A53AC0060D9B0 /* TripDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F59B2C5A53AC0060D9B0 /* TripDetailsUIView.swift */; };
+		2B55F59E2C5A57190060D9B0 /* DescentCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F59D2C5A57190060D9B0 /* DescentCellUIView.swift */; };
+		2B55F5A02C5A67F20060D9B0 /* NewDescentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F59F2C5A67F20060D9B0 /* NewDescentUIView.swift */; };
+		2B55F5A22C5A6EF20060D9B0 /* NewTripUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5A12C5A6EF20060D9B0 /* NewTripUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		2B55F5952C5A32DA0060D9B0 /* TripCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCellUIView.swift; sourceTree = "<group>"; };
 		2B55F5972C5A37450060D9B0 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		2B55F5992C5A38980060D9B0 /* TripsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewModel.swift; sourceTree = "<group>"; };
+		2B55F59B2C5A53AC0060D9B0 /* TripDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsUIView.swift; sourceTree = "<group>"; };
+		2B55F59D2C5A57190060D9B0 /* DescentCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescentCellUIView.swift; sourceTree = "<group>"; };
+		2B55F59F2C5A67F20060D9B0 /* NewDescentUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDescentUIView.swift; sourceTree = "<group>"; };
+		2B55F5A12C5A6EF20060D9B0 /* NewTripUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +276,10 @@
 			children = (
 				2B55F5932C5A2EFD0060D9B0 /* TripsUIView.swift */,
 				2B55F5952C5A32DA0060D9B0 /* TripCellUIView.swift */,
+				2B55F59B2C5A53AC0060D9B0 /* TripDetailsUIView.swift */,
+				2B55F59D2C5A57190060D9B0 /* DescentCellUIView.swift */,
+				2B55F59F2C5A67F20060D9B0 /* NewDescentUIView.swift */,
+				2B55F5A12C5A6EF20060D9B0 /* NewTripUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,11 +371,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B55F59C2C5A53AC0060D9B0 /* TripDetailsUIView.swift in Sources */,
 				2B55F5852C58C4BA0060D9B0 /* StatisticsUIView.swift in Sources */,
+				2B55F59E2C5A57190060D9B0 /* DescentCellUIView.swift in Sources */,
 				2B55F58C2C5908CA0060D9B0 /* Profile.swift in Sources */,
 				2B55F5552C579CBF0060D9B0 /* ContentView.swift in Sources */,
 				2B55F5872C58D54E0060D9B0 /* EditStatsUIView.swift in Sources */,
 				2B55F5982C5A37450060D9B0 /* Trip.swift in Sources */,
+				2B55F5A22C5A6EF20060D9B0 /* NewTripUIView.swift in Sources */,
 				2B55F5532C579CBF0060D9B0 /* DafabetApp.swift in Sources */,
 				2B55F5942C5A2EFD0060D9B0 /* TripsUIView.swift in Sources */,
 				2B55F5782C57B7DB0060D9B0 /* TabUIView.swift in Sources */,
@@ -371,6 +386,7 @@
 				2B55F56A2C579F040060D9B0 /* ReOnboardingUIView.swift in Sources */,
 				2B55F58A2C58D6540060D9B0 /* ImagePicker.swift in Sources */,
 				2B55F5962C5A32DA0060D9B0 /* TripCellUIView.swift in Sources */,
+				2B55F5A02C5A67F20060D9B0 /* NewDescentUIView.swift in Sources */,
 				2B55F5622C579E800060D9B0 /* LoaderUIView.swift in Sources */,
 				2B55F58E2C5909820060D9B0 /* ProfileViewModel.swift in Sources */,
 				2B55F59A2C5A38980060D9B0 /* TripsViewModel.swift in Sources */,

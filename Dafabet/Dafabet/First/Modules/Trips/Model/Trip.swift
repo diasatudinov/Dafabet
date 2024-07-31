@@ -37,8 +37,9 @@ struct Descent: Identifiable, Hashable, Codable {
     var distance: String
     var maxSpeed: String
     var descentTime: String
+    var time: String
     
     enum CodingKeys: String, CodingKey {
-        case id, name, distance, maxSpeed, descentTime
+        case id, name, distance, maxSpeed, descentTime, time
     }
 }
