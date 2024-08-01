@@ -34,6 +34,11 @@
 		2B55F59E2C5A57190060D9B0 /* DescentCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F59D2C5A57190060D9B0 /* DescentCellUIView.swift */; };
 		2B55F5A02C5A67F20060D9B0 /* NewDescentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F59F2C5A67F20060D9B0 /* NewDescentUIView.swift */; };
 		2B55F5A22C5A6EF20060D9B0 /* NewTripUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5A12C5A6EF20060D9B0 /* NewTripUIView.swift */; };
+		2B55F5A52C5B91660060D9B0 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5A42C5B91660060D9B0 /* ApphudSDK */; };
+		2B55F5A82C5B91790060D9B0 /* AppMetricaAdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5A72C5B91790060D9B0 /* AppMetricaAdSupport */; };
+		2B55F5AA2C5B91790060D9B0 /* AppMetricaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5A92C5B91790060D9B0 /* AppMetricaCore */; };
+		2B55F5AC2C5B91790060D9B0 /* AppMetricaCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5AB2C5B91790060D9B0 /* AppMetricaCrashes */; };
+		2B55F5AE2C5B91790060D9B0 /* AppMetricaWebKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5AD2C5B91790060D9B0 /* AppMetricaWebKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,9 +73,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B55F5AC2C5B91790060D9B0 /* AppMetricaCrashes in Frameworks */,
 				2B55F5732C57AF1D0060D9B0 /* OneSignalInAppMessages in Frameworks */,
+				2B55F5A82C5B91790060D9B0 /* AppMetricaAdSupport in Frameworks */,
 				2B55F5712C57AF1D0060D9B0 /* OneSignalFramework in Frameworks */,
+				2B55F5A52C5B91660060D9B0 /* ApphudSDK in Frameworks */,
+				2B55F5AA2C5B91790060D9B0 /* AppMetricaCore in Frameworks */,
 				2B55F5752C57AF1D0060D9B0 /* OneSignalLocation in Frameworks */,
+				2B55F5AE2C5B91790060D9B0 /* AppMetricaWebKit in Frameworks */,
 				2B55F56F2C57AF1D0060D9B0 /* OneSignalExtension in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +323,11 @@
 				2B55F5702C57AF1D0060D9B0 /* OneSignalFramework */,
 				2B55F5722C57AF1D0060D9B0 /* OneSignalInAppMessages */,
 				2B55F5742C57AF1D0060D9B0 /* OneSignalLocation */,
+				2B55F5A42C5B91660060D9B0 /* ApphudSDK */,
+				2B55F5A72C5B91790060D9B0 /* AppMetricaAdSupport */,
+				2B55F5A92C5B91790060D9B0 /* AppMetricaCore */,
+				2B55F5AB2C5B91790060D9B0 /* AppMetricaCrashes */,
+				2B55F5AD2C5B91790060D9B0 /* AppMetricaWebKit */,
 			);
 			productName = Dafabet;
 			productReference = 2B55F54F2C579CBF0060D9B0 /* Dafabet.app */;
@@ -344,6 +359,8 @@
 			mainGroup = 2B55F5462C579CBF0060D9B0;
 			packageReferences = (
 				2B55F56D2C57AF1C0060D9B0 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
+				2B55F5A32C5B91660060D9B0 /* XCRemoteSwiftPackageReference "ApphudSDK" */,
+				2B55F5A62C5B91790060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */,
 			);
 			productRefGroup = 2B55F5502C579CBF0060D9B0 /* Products */;
 			projectDirPath = "";
@@ -617,6 +634,22 @@
 				minimumVersion = 5.2.2;
 			};
 		};
+		2B55F5A32C5B91660060D9B0 /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apphud/ApphudSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.0;
+			};
+		};
+		2B55F5A62C5B91790060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appmetrica/appmetrica-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -639,6 +672,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2B55F56D2C57AF1C0060D9B0 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
 			productName = OneSignalLocation;
+		};
+		2B55F5A42C5B91660060D9B0 /* ApphudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5A32C5B91660060D9B0 /* XCRemoteSwiftPackageReference "ApphudSDK" */;
+			productName = ApphudSDK;
+		};
+		2B55F5A72C5B91790060D9B0 /* AppMetricaAdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5A62C5B91790060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaAdSupport;
+		};
+		2B55F5A92C5B91790060D9B0 /* AppMetricaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5A62C5B91790060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaCore;
+		};
+		2B55F5AB2C5B91790060D9B0 /* AppMetricaCrashes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5A62C5B91790060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaCrashes;
+		};
+		2B55F5AD2C5B91790060D9B0 /* AppMetricaWebKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5A62C5B91790060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaWebKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
