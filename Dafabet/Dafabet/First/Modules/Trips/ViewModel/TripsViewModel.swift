@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class TripsViewModel: ObservableObject {
-    @Published var trips: [Trip] = []{
+    @Published var trips: [Trip] = [] {
         didSet {
             saveTrips()
         }
