@@ -11,16 +11,6 @@ struct LoaderUIView: View {
     @State private var progress: Double = 0.0
     @State private var timer: Timer?
     @State private var isLoadingView: Bool = true
-    @State private var isWeb: Bool = true
-    
-//    @State private var apiResponse: ApiResponse?
-//    private let apiService = ApiService()
-    @State private var errorMessage: String?
-    
-    @AppStorage("isRequested") var isRequested: Bool = false
-    @AppStorage("isBlock") var isBlock: Bool = true
-    @State var isDead: Bool = true
-
     
     var body: some View {
         if isLoadingView {
@@ -68,12 +58,7 @@ struct LoaderUIView: View {
             }
             
         } else {
-            if true {
-                ReOnboardingUIView()
-                
-            } else {
-                UsOnboardingUIView()
-            }
+            ReOnboardingUIView()
         }
     }
     func startTimer() {
@@ -88,56 +73,6 @@ struct LoaderUIView: View {
             }
         }
     }
-    
-//    func fetch() {
-//        apiService.fetchData { result in
-//            switch result {
-//            case .success(let data):
-//                self.apiResponse = data
-//            case .failure(let error):
-//                self.errorMessage = error.localizedDescription
-//            }
-//        }
-//    }
-//    
-//    private func checkWeb() -> Bool? {
-//        guard let response = apiResponse else {
-//            return nil
-//        }
-//        return response.sortable
-//    }
-    
-//    private func check_data() {
-//
-//        guard isRequested == false else {
-//
-//           // self.isFetched = true
-//
-//            return
-//        }
-//
-//        let networkService = NetworkService()
-//        let deviceData = DeviceInfo.collectData()
-//
-//        print(deviceData)
-//        networkService.sendRequest(endpoint: deviceData) { result in
-//
-//            isRequested = true
-//
-//            switch result {
-//
-//            case .success(let success):
-//
-//                self.isBlock = success
-//                //self.isFetched = true
-//
-//            case .failure(_):
-//
-//                self.isBlock = self.isDead
-//                //self.isFetched = true
-//            }
-//        }
-//    }
 }
 
 #Preview {

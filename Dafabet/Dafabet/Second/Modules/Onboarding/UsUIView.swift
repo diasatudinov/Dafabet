@@ -1,5 +1,5 @@
 //
-//  UsOnboardingUIView.swift
+//  UsUIView.swift
 //  Dafabet
 //
 //  Created by Dias Atudinov on 29.07.2024.
@@ -7,9 +7,8 @@
 
 import SwiftUI
 import StoreKit
-import OneSignalFramework
 
-struct UsOnboardingUIView: View {
+struct UsUIView: View {
     @State private var progress: Double = 0.0
     @State private var timer: Timer?
     @State private var isLoadingView: Bool = true
@@ -144,11 +143,8 @@ struct UsOnboardingUIView: View {
                                     .ignoresSafeArea()
                                 
                                 Button {
-                                    OneSignal.Notifications.requestPermission({ accepted in
-                                        print("User accepted notifications: \(accepted)")
-                                        isNotificationView = false
-                                        onboardingShowed = true
-                                    }, fallbackToSettings: true)
+                                    isNotificationView = false
+                                    onboardingShowed = true
                                 } label: {
                                     
                                     ZStack(alignment: .center) {
@@ -161,7 +157,6 @@ struct UsOnboardingUIView: View {
                                         Text("Enable notification").font(.system(size: 17, weight: .semibold))
                                             .foregroundColor(.white)
                                     }
-                                    //                                }
                                 }.background(Color.onboardingBtn)
                                     .cornerRadius(18)
                                     .padding(.horizontal, 24)
@@ -198,13 +193,11 @@ struct UsOnboardingUIView: View {
                     }
                     
                 } else {
-                    Text("WebUIView")
-                    //WebUIView()
+                    Text("TestView")
                 }
             }
         } else {
-            Text("WebUIView")
-            //WebUIView()
+            Text("TestView")
         }
     }
     
@@ -228,5 +221,5 @@ struct UsOnboardingUIView: View {
 
 
 #Preview {
-    UsOnboardingUIView()
+    UsUIView()
 }

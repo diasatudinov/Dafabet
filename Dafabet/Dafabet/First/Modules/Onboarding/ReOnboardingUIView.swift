@@ -119,19 +119,6 @@ struct ReOnboardingUIView: View {
             TabUIView()
         }
     }
-    
-//    func loadProfile() {
-//        if let data = UserDefaults.standard.data(forKey: "profile"),
-//           let decodedProfile = try? JSONDecoder().decode(ProfileModel.self, from: data) {
-//            profile = decodedProfile
-//        }
-//        
-//        if let profile = profile {
-//            signedUP = true
-//        } else {
-//            signedUP = false
-//        }
-//    }
 }
 
 #Preview {

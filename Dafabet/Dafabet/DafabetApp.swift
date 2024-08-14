@@ -9,12 +9,10 @@ import SwiftUI
 
 @main
 struct DafabetApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
             LoaderUIView()
-            //EditStatsUIView()
         }
     }
 }

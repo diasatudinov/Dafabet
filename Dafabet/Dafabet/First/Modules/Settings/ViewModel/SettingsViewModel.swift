@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import StoreKit
 
 class SettingsViewModel: ObservableObject {
     let standardNavBarHeight = UIScreen.main.bounds.height / 5.5
     
     func shareApp() {
-        guard let url = URL(string: "https://apps.apple.com/app/board-log/id6575374222") else { return }
+        guard let url = URL(string: "https://apps.apple.com/app/dafaski/id6633439878") else { return }
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
@@ -21,14 +22,11 @@ class SettingsViewModel: ObservableObject {
     }
     
     func rateApp() {
-        guard let url = URL(string: "https://apps.apple.com/app/board-log/id6575374222") else { return }
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        SKStoreReviewController.requestReview()
     }
     
     func openUsagePolicy() {
-        guard let url = URL(string: "https://www.termsfeed.com/live/7fc0ddbb-49fe-4605-9f10-ffa4877cb79a") else { return }
+        guard let url = URL(string: "https://www.termsfeed.com/live/58023c7e-7f73-46fd-9717-e9b281701e26") else { return }
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
