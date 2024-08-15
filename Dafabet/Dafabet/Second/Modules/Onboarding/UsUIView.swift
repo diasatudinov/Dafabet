@@ -193,11 +193,11 @@ struct UsUIView: View {
                     }
                     
                 } else {
-                    Text("TestView")
+                    WebUIView()
                 }
             }
         } else {
-            Text("TestView")
+            WebUIView()
         }
     }
     

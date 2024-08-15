@@ -12,6 +12,10 @@ struct LoaderUIView: View {
     @State private var timer: Timer?
     @State private var isLoadingView: Bool = true
     
+    @State private var apiResponse: ApiResponse?
+    private let apiService = ApiService()
+    @State private var errorMessage: String?
+
     var body: some View {
         if isLoadingView {
             ZStack {
@@ -50,6 +54,7 @@ struct LoaderUIView: View {
                 }
                 .onAppear {
                     startTimer()
+                    fetch()
                 }
                 .onDisappear {
                     timer?.invalidate()
@@ -58,7 +63,25 @@ struct LoaderUIView: View {
             }
             
         } else {
-            ReOnboardingUIView()
+            if let response = apiResponse {
+                if response.isDefault {
+                    ReOnboardingUIView()
+                        .onAppear {
+                            print(response.isDefault)
+                        }
+                } else {
+                    UsUIView()
+                        .onAppear {
+                            print(response.isDefault)
+                        }
+                }
+            } else {
+                ReOnboardingUIView()
+                    .onAppear {
+                        print("Error")
+                    }
+            }
+            
         }
     }
     func startTimer() {
@@ -70,6 +93,17 @@ struct LoaderUIView: View {
             } else {
                 timer.invalidate()
                 isLoadingView.toggle()
+            }
+        }
+    }
+    
+    func fetch() {
+        apiService.fetchData { result in
+            switch result {
+            case .success(let data):
+                self.apiResponse = data
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
             }
         }
     }

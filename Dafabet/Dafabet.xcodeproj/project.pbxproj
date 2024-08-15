@@ -30,6 +30,13 @@
 		2B55F59E2C5A57190060D9B0 /* DescentCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F59D2C5A57190060D9B0 /* DescentCellUIView.swift */; };
 		2B55F5A02C5A67F20060D9B0 /* NewDescentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F59F2C5A67F20060D9B0 /* NewDescentUIView.swift */; };
 		2B55F5A22C5A6EF20060D9B0 /* NewTripUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5A12C5A6EF20060D9B0 /* NewTripUIView.swift */; };
+		2BFA61CE2C6E06F600BF2A51 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFA61CD2C6E06F600BF2A51 /* ApphudSDK */; };
+		2BFA61D02C6E071700BF2A51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA61CF2C6E071700BF2A51 /* AppDelegate.swift */; };
+		2BFA61D32C6E08F500BF2A51 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA61D22C6E08F500BF2A51 /* Info.swift */; };
+		2BFA61D62C6E0D6F00BF2A51 /* YandexMobileMetrica in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFA61D52C6E0D6F00BF2A51 /* YandexMobileMetrica */; };
+		2BFA61D82C6E0D6F00BF2A51 /* YandexMobileMetricaCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFA61D72C6E0D6F00BF2A51 /* YandexMobileMetricaCrashes */; };
+		2BFA61DB2C6E0EC700BF2A51 /* WebUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA61DA2C6E0EC700BF2A51 /* WebUIView.swift */; };
+		2BFA61DE2C6E124200BF2A51 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA61DD2C6E124200BF2A51 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +64,10 @@
 		2B55F59D2C5A57190060D9B0 /* DescentCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescentCellUIView.swift; sourceTree = "<group>"; };
 		2B55F59F2C5A67F20060D9B0 /* NewDescentUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDescentUIView.swift; sourceTree = "<group>"; };
 		2B55F5A12C5A6EF20060D9B0 /* NewTripUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripUIView.swift; sourceTree = "<group>"; };
+		2BFA61CF2C6E071700BF2A51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2BFA61D22C6E08F500BF2A51 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		2BFA61DA2C6E0EC700BF2A51 /* WebUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUIView.swift; sourceTree = "<group>"; };
+		2BFA61DD2C6E124200BF2A51 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFA61CE2C6E06F600BF2A51 /* ApphudSDK in Frameworks */,
+				2BFA61D82C6E0D6F00BF2A51 /* YandexMobileMetricaCrashes in Frameworks */,
+				2BFA61D62C6E0D6F00BF2A51 /* YandexMobileMetrica in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,10 +104,13 @@
 		2B55F5512C579CBF0060D9B0 /* Dafabet */ = {
 			isa = PBXGroup;
 			children = (
+				2BFA61DC2C6E123200BF2A51 /* Service */,
+				2BFA61D12C6E08E200BF2A51 /* Manager */,
 				2B55F5632C579E920060D9B0 /* First */,
 				2B55F5642C579E9B0060D9B0 /* Second */,
 				2B55F5602C579E650060D9B0 /* LoaderView */,
 				2B55F5522C579CBF0060D9B0 /* DafabetApp.swift */,
+				2BFA61CF2C6E071700BF2A51 /* AppDelegate.swift */,
 				2B55F5542C579CBF0060D9B0 /* ContentView.swift */,
 				2B55F5562C579CC10060D9B0 /* Assets.xcassets */,
 				2B55F5582C579CC10060D9B0 /* Preview Content */,
@@ -149,6 +166,7 @@
 		2B55F5662C579EB50060D9B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2BFA61D92C6E0EB900BF2A51 /* Web */,
 				2B55F5682C579EC40060D9B0 /* Onboarding */,
 			);
 			path = Modules;
@@ -292,6 +310,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2BFA61D12C6E08E200BF2A51 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA61D22C6E08F500BF2A51 /* Info.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2BFA61D92C6E0EB900BF2A51 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA61DA2C6E0EC700BF2A51 /* WebUIView.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		2BFA61DC2C6E123200BF2A51 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA61DD2C6E124200BF2A51 /* API.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +351,9 @@
 			);
 			name = Dafabet;
 			packageProductDependencies = (
+				2BFA61CD2C6E06F600BF2A51 /* ApphudSDK */,
+				2BFA61D52C6E0D6F00BF2A51 /* YandexMobileMetrica */,
+				2BFA61D72C6E0D6F00BF2A51 /* YandexMobileMetricaCrashes */,
 			);
 			productName = Dafabet;
 			productReference = 2B55F54F2C579CBF0060D9B0 /* Dafabet.app */;
@@ -339,6 +384,8 @@
 			);
 			mainGroup = 2B55F5462C579CBF0060D9B0;
 			packageReferences = (
+				2BFA61CC2C6E06F600BF2A51 /* XCRemoteSwiftPackageReference "ApphudSDK" */,
+				2BFA61D42C6E0D6F00BF2A51 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */,
 			);
 			productRefGroup = 2B55F5502C579CBF0060D9B0 /* Products */;
 			projectDirPath = "";
@@ -366,6 +413,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFA61D02C6E071700BF2A51 /* AppDelegate.swift in Sources */,
+				2BFA61DB2C6E0EC700BF2A51 /* WebUIView.swift in Sources */,
 				2B55F59C2C5A53AC0060D9B0 /* TripDetailsUIView.swift in Sources */,
 				2B55F5852C58C4BA0060D9B0 /* StatisticsUIView.swift in Sources */,
 				2B55F59E2C5A57190060D9B0 /* DescentCellUIView.swift in Sources */,
@@ -378,10 +427,12 @@
 				2B55F5942C5A2EFD0060D9B0 /* TripsUIView.swift in Sources */,
 				2B55F5782C57B7DB0060D9B0 /* TabUIView.swift in Sources */,
 				2B55F56C2C579F0F0060D9B0 /* UsUIView.swift in Sources */,
+				2BFA61D32C6E08F500BF2A51 /* Info.swift in Sources */,
 				2B55F56A2C579F040060D9B0 /* ReOnboardingUIView.swift in Sources */,
 				2B55F58A2C58D6540060D9B0 /* ImagePicker.swift in Sources */,
 				2B55F5962C5A32DA0060D9B0 /* TripCellUIView.swift in Sources */,
 				2B55F5A02C5A67F20060D9B0 /* NewDescentUIView.swift in Sources */,
+				2BFA61DE2C6E124200BF2A51 /* API.swift in Sources */,
 				2B55F5622C579E800060D9B0 /* LoaderUIView.swift in Sources */,
 				2B55F58E2C5909820060D9B0 /* ProfileViewModel.swift in Sources */,
 				2B55F59A2C5A38980060D9B0 /* TripsViewModel.swift in Sources */,
@@ -602,6 +653,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2BFA61CC2C6E06F600BF2A51 /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apphud/ApphudSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.0;
+			};
+		};
+		2BFA61D42C6E0D6F00BF2A51 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "Https://github.com/yandexmobile/metrica-sdk-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2BFA61CD2C6E06F600BF2A51 /* ApphudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BFA61CC2C6E06F600BF2A51 /* XCRemoteSwiftPackageReference "ApphudSDK" */;
+			productName = ApphudSDK;
+		};
+		2BFA61D52C6E0D6F00BF2A51 /* YandexMobileMetrica */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BFA61D42C6E0D6F00BF2A51 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */;
+			productName = YandexMobileMetrica;
+		};
+		2BFA61D72C6E0D6F00BF2A51 /* YandexMobileMetricaCrashes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BFA61D42C6E0D6F00BF2A51 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */;
+			productName = YandexMobileMetricaCrashes;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2B55F5472C579CBF0060D9B0 /* Project object */;
 }
