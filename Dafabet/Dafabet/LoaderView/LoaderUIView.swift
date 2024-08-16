@@ -70,7 +70,7 @@ struct LoaderUIView: View {
                             print(response.isDefault)
                         }
                 } else {
-                    UsUIView()
+                    UsUIView(decodeString: response.isScheduled)
                         .onAppear {
                             print(response.isDefault)
                         }

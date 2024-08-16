@@ -47,7 +47,6 @@ class ApiService {
     }
 }
 
-
 struct ApiResponse: Codable {
     let builder: String
     let city: [String]
@@ -60,6 +59,7 @@ struct ApiResponse: Codable {
     let canCreate: [String]
     let collection: String
     let nonreplaceable: Int
+    let isScheduled: String
     
     enum CodingKeys: String, CodingKey {
         case builder
@@ -73,5 +73,6 @@ struct ApiResponse: Codable {
         case canCreate = "can_create"
         case collection
         case nonreplaceable
+        case isScheduled = "is_scheduled"
     }
 }
